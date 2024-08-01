@@ -16,9 +16,9 @@ namespace Library
 			builder.Services.AddScoped<ILibraryService, LibraryService>();
             builder.Services.AddScoped<ISetService, SetService>();
             builder.Services.AddScoped<IShelfService, ShelfService>();
+			builder.Services.AddScoped<IBookService, BookService>();
 
-
-            builder.Services.AddDbContext<ApplicationDbContext>(
+			builder.Services.AddDbContext<ApplicationDbContext>(
 				options => options.UseSqlServer(
 					builder.Configuration.GetConnectionString(
 						"DefaultConnection"
