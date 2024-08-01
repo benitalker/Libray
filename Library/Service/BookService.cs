@@ -1,6 +1,7 @@
 ﻿using Library.Data;
 using Library.Models;
 using Library.ViewModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace Library.Service
 {
@@ -12,9 +13,25 @@ namespace Library.Service
 			_context = context;
 		}
 
+		private bool CanAddBook(int bookWidth,long shelfId,long setId)
+		{
+
+			int shelfWidth = _context.Shelves.Where(x => x.Id == shelfId).First().Width;
+			int setWidth = _context.Books.Where(x => x.SetId == setId).Sum(book => book.Width);
+			if (shelfWidth >= setWidth + bookWidth)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
 		public BookModel CreateBook(BookVM bookVM)
 		{
 			long shlfId = FindShelfIdBySetId(bookVM.SetId);
+			bool canAdd = CanAddBook(bookVM.Width, shlfId, bookVM.SetId);
 			long libraryId = FindLibraryIdByShelfId(shlfId);
 			string myGenre = _context.Libraries.Where(x => x.Id == libraryId).First().Genre;
 			var book = new BookModel()
