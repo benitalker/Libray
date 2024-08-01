@@ -14,10 +14,13 @@ namespace Library.Service
 
 		public BookModel CreateBook(BookVM bookVM)
 		{
+			long shlfId = FindShelfIdBySetId(bookVM.SetId);
+			long libraryId = FindLibraryIdByShelfId(shlfId);
+			string myGenre = _context.Libraries.Where(x => x.Id == libraryId).First().Genre;
 			var book = new BookModel()
 			{
 				Name = bookVM.Name,
-				Genre = bookVM.Genre,
+				Genre = myGenre,
 				Height = bookVM.Height,
 				Width = bookVM.Width,
 				SetId = bookVM.SetId,
@@ -43,6 +46,9 @@ namespace Library.Service
 
 		public long FindShelfIdBySetId(long id)
 		=> _context.Sets.Where(set => set.Id == id).FirstOrDefault()!.ShelfId;
+
+		public long FindLibraryIdByShelfId(long id)
+		=> _context.Shelves.Where(set => set.Id == id).FirstOrDefault()!.LibraryId;
 
 		public ShelfModel FindShelfModelBySetId(long id)
 		=> _context.Shelves.Where(shelf => shelf.Id == id).FirstOrDefault();
