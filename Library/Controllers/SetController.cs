@@ -17,22 +17,24 @@ namespace Library.Controllers
             ViewBag.Id = id;
             return View(_setService.GetAllSetsById(id));
         }
-        
+
         public IActionResult Create(long id)
         {
-
-            return View(new SetVM() { });
+            var a = new SetVM() { ShelfId = id };
+            return View(a);
         }
         [HttpPost]
         public IActionResult Create(SetVM set)
         {
             _setService.CreateSet(set);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = set.ShelfId });
         }
         public IActionResult Delete(long id)
         {
-            _setService.DeleteSet(id);
-            return RedirectToAction("Index");
+            var a = _setService.GetAllSetsByIdToDelete(id);
+            var b = a[0].ShelfId;
+              _setService.DeleteSet(id);
+            return RedirectToAction("Index", new { id = b });
         }
     }
 }

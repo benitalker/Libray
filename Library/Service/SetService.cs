@@ -18,9 +18,14 @@ namespace Library.Service
                     .Include(x => x.Books)
                     .Where(x => x.ShelfId == id).ToList();
 
+        public List<SetModel> GetAllSetsByIdToDelete(long id)
+        => _context.Sets
+                    .Include(x => x.Books)
+                    .Where(x => x.Id == id).ToList();
+
         public void CreateSet(SetVM newSet)
         {
-            var set = new SetModel() { Name = newSet.Name };
+            var set = new SetModel() { Name = newSet.Name, ShelfId = newSet.ShelfId};
             _context.Sets.Add(set);
             _context.SaveChanges();
         }

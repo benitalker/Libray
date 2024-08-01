@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\benit\\OneDrive\\שולחן העבודה\\kodkod2\\TESTS\\TestWeek5\\Library\\Library\\Library.csproj": {}
+    "C:\\Users\\menac\\Source\\Repos\\Libray\\Library\\Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\benit\\OneDrive\\שולחן העבודה\\kodkod2\\TESTS\\TestWeek5\\Library\\Library\\Library.csproj": {
+    "C:\\Users\\menac\\Source\\Repos\\Libray\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\benit\\OneDrive\\שולחן העבודה\\kodkod2\\TESTS\\TestWeek5\\Library\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\Users\\menac\\Source\\Repos\\Libray\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\Users\\benit\\OneDrive\\שולחן העבודה\\kodkod2\\TESTS\\TestWeek5\\Library\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\benit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\benit\\OneDrive\\שולחן העבודה\\kodkod2\\TESTS\\TestWeek5\\Library\\Library\\obj\\",
+        "projectPath": "C:\\Users\\menac\\Source\\Repos\\Libray\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\menac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\menac\\Source\\Repos\\Libray\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\benit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\menac\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
