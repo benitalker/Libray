@@ -31,15 +31,14 @@
 						{
 							<h5>
 								@book.Name |
-								@Html.ActionLink("Delete", "Delete", new { id = book.Id })
+								@Html.ActionLink("Delete", "Delete","Book", new { id = book.Id })
 							</h5>
 							<hr />
 						}
 					}
 				</td>
 				<td>
-					@* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
-					@Html.ActionLink("Add Book", "AddBook","Book", new { id = item.Id }) |
+					@Html.ActionLink("Add Book", "Create","Book", new { id = item.Id }) |
 					@Html.ActionLink("Delete", "Delete", new { id = item.Id })
 				</td>
 				<hr />
