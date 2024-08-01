@@ -5,7 +5,10 @@
 }
 
 <h1>Book Sets</h1>
-
+@if (ViewBag.ErrorMessage != null)
+{
+	<span class="error-span" id="error" onclick="closeError()"> @ViewBag.ErrorMessage</span>
+}
 <p>
 	@Html.ActionLink("Create New", "Create", "Set", new { id = ViewBag.Id })
 </p>
@@ -46,3 +49,8 @@
 		}
 	</tbody>
 </table>
+<script>
+	function closeError() {
+		document.getElementById("error").style.display = "none";
+	}
+</script>

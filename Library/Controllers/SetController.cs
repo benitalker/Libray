@@ -12,8 +12,10 @@ namespace Library.Controllers
         {
             _setService = setService;
         }
-        public IActionResult Index(long id)
+        public IActionResult Index(long id ,string error = "")
         {
+            if(error != "")
+                ViewBag.ErrorMessage = error;
             ViewBag.Id = id;
             return View(_setService.GetAllSetsById(id));
         }

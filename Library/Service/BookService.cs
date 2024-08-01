@@ -12,7 +12,7 @@ namespace Library.Service
 			_context = context;
 		}
 
-		public void CreateBook(BookVM bookVM)
+		public BookModel CreateBook(BookVM bookVM)
 		{
 			var book = new BookModel()
 			{
@@ -25,6 +25,7 @@ namespace Library.Service
 			};
 			_context.Books.Add(book);
 			_context.SaveChanges();
+			return book;
 		}
 
 		public void DeleteBook(long id)
@@ -40,8 +41,11 @@ namespace Library.Service
 		public long FindSetById(long id)
 		=> _context.Books.Where(set => set.Id == id).FirstOrDefault()!.SetId;
 
-		public long FindShelfById(long id)
+		public long FindShelfIdBySetId(long id)
 		=> _context.Sets.Where(set => set.Id == id).FirstOrDefault()!.ShelfId;
+
+		public ShelfModel FindShelfModelBySetId(long id)
+		=> _context.Shelves.Where(shelf => shelf.Id == id).FirstOrDefault();
 
 	}
 }
